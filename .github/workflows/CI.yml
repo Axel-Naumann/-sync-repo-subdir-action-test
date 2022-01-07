@@ -3,6 +3,7 @@ on: pull_request
 
 jobs:
   CI:
+    runs-on: python:3
     steps:
       - name: test default branch
         uses: Axel-Naumann/sync-repo-subdir-action@main
