@@ -4,7 +4,7 @@ on: pull_request
 
 jobs:
   test-default-branch:
-    uses: Axel-Naumann/sync-repo-subdir-action@${{ github.ref }}
+    uses: Axel-Naumann/sync-repo-subdir-action@main
     with:
       source: "Axel-Naumann/sync-repo-subdir-action-test-source"
       source_branch: "main"
@@ -12,7 +12,7 @@ jobs:
       github_token: ${{ secrets.GITHUB_TOKEN }}
       testing: true
   test-same-level:
-    uses: Axel-Naumann/sync-repo-subdir-action@${{ github.ref }}
+    uses: Axel-Naumann/sync-repo-subdir-action@main
     with:
       source: "Axel-Naumann/sync-repo-subdir-action-test-source"
       source_branch: "main"
@@ -21,7 +21,7 @@ jobs:
       github_token: ${{ secrets.GITHUB_TOKEN }}
       testing: true
   test-subdir-level:
-    uses: Axel-Naumann/sync-repo-subdir-action@${{ github.ref }}
+    uses: Axel-Naumann/sync-repo-subdir-action@main
     with:
       source: "Axel-Naumann/sync-repo-subdir-action-test-source/subdir"
       source_branch: "main"
@@ -29,4 +29,3 @@ jobs:
       target_branch: "subdir-level"
       github_token: ${{ secrets.GITHUB_TOKEN }}
       testing: true
-    
