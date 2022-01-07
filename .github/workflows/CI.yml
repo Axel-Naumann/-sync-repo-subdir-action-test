@@ -3,7 +3,8 @@ on: pull_request
 
 jobs:
   CI:
-    runs-on: python:3
+    container: "python:3"
+    runs-on: ubuntu-latest
     steps:
       - name: test default branch
         uses: Axel-Naumann/sync-repo-subdir-action@main
@@ -14,7 +15,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           testing: true
       - name: test same level
-        uses: Axel-Naumann/sync-repo-subdir-action@$main
+        uses: Axel-Naumann/sync-repo-subdir-action@main
         with:
           source: "Axel-Naumann/sync-repo-subdir-action-test-source"
           source_branch: "main"
