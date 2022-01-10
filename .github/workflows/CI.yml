@@ -12,7 +12,8 @@ jobs:
           source: "Axel-Naumann/sync-repo-subdir-action-test-source"
           source_branch: "main"
           target: "Axel-Naumann/sync-repo-subdir-action-test-target"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
           testing: true
       - name: test same level
         uses: Axel-Naumann/sync-repo-subdir-action@main
@@ -21,7 +22,8 @@ jobs:
           source_branch: "main"
           target: "Axel-Naumann/sync-repo-subdir-action-test-target"
           target_branch: "same-level"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
           testing: true
       - name: test subdir level
         uses: Axel-Naumann/sync-repo-subdir-action@main
@@ -30,5 +32,6 @@ jobs:
           source_branch: "main"
           target: "Axel-Naumann/sync-repo-subdir-action-test-target"
           target_branch: "subdir-level"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
           testing: true
