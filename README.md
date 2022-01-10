@@ -1,2 +1,2 @@
-# -sync-repo-subdir-action-test
+# sync-repo-subdir-action-test
 Tests  sync-repo-subdir-action-test

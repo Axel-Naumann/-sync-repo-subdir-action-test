@@ -1,0 +1,37 @@
+name: CI
+on: pull_request
+
+jobs:
+  CI:
+    container: "python:3"
+    runs-on: ubuntu-latest
+    steps:
+      - name: test default branch
+        uses: Axel-Naumann/sync-repo-subdir-action@main
+        with:
+          source: "Axel-Naumann/sync-repo-subdir-action-test-source"
+          source_branch: "main"
+          target: "Axel-Naumann/sync-repo-subdir-action-test-target"
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
+          testing: true
+      - name: test same level
+        uses: Axel-Naumann/sync-repo-subdir-action@main
+        with:
+          source: "Axel-Naumann/sync-repo-subdir-action-test-source"
+          source_branch: "main"
+          target: "Axel-Naumann/sync-repo-subdir-action-test-target"
+          target_branch: "same-level"
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
+          testing: true
+      - name: test subdir level
+        uses: Axel-Naumann/sync-repo-subdir-action@main
+        with:
+          source: "Axel-Naumann/sync-repo-subdir-action-test-source/subdir"
+          source_branch: "main"
+          target: "Axel-Naumann/sync-repo-subdir-action-test-target"
+          target_branch: "subdir-level"
+          gist: 97321608e2aa04e2a6ecbc2b68a41a99
+          github_token: ${{ secrets.TOKEN }}
+          testing: true
